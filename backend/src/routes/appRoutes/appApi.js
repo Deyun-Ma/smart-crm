@@ -27,6 +27,10 @@ const routerApp = (entity, controller) => {
   if (entity === 'client') {
     router.route(`/${entity}/calculate-score/:id`).get(catchErrors(controller['calculateScore']));
     router.route(`/${entity}/calculate-all-scores`).get(catchErrors(controller['calculateAllScores']));
+    // 智能健康监控 (新增)
+    router.route(`/${entity}/health/:id`).get(catchErrors(controller['getClientHealth']));
+    router.route(`/${entity}/health-all`).get(catchErrors(controller['getAllClientsHealth']));
+    router.route(`/${entity}/at-risk`).get(catchErrors(controller['getAtRiskClients']));
   }
 };
 
