@@ -28,6 +28,32 @@ const schema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  score: {
+    total: {
+      type: Number,
+      default: 0,
+    },
+    level: {
+      type: String,
+      enum: ['A', 'B', 'C', 'D'],
+      default: 'D',
+    },
+    totalRevenue: {
+      type: Number,
+      default: 0,
+    },
+    totalInvoices: {
+      type: Number,
+      default: 0,
+    },
+    paidInvoices: {
+      type: Number,
+      default: 0,
+    },
+    lastCalculated: {
+      type: Date,
+    },
+  },
 });
 
 schema.plugin(require('mongoose-autopopulate'));
