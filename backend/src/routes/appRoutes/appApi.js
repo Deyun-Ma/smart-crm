@@ -4,6 +4,7 @@ const router = express.Router();
 
 const appControllers = require('@/controllers/appControllers');
 const { routesList } = require('@/models/utils');
+const aiChatController = require('@/controllers/appControllers/aiChatController');
 
 const routerApp = (entity, controller) => {
   router.route(`/${entity}/create`).post(catchErrors(controller['create']));
@@ -38,5 +39,9 @@ routesList.forEach(({ entity, controllerName }) => {
   const controller = appControllers[controllerName];
   routerApp(entity, controller);
 });
+
+// AI Customer Service Chat
+router.route('/ai-chat/message').post(catchErrors(aiChatController.sendMessage));
+router.route('/ai-chat/status').get(catchErrors(aiChatController.getStatus));
 
 module.exports = router;

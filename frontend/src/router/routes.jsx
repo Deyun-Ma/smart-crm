@@ -28,6 +28,7 @@ const Taxes = lazy(() => import('@/pages/Taxes'));
 const Profile = lazy(() => import('@/pages/Profile'));
 
 const About = lazy(() => import('@/pages/About'));
+const AiChat = lazy(() => import('@/pages/AiChat'));
 
 let routes = {
   expense: [],
@@ -122,6 +123,10 @@ let routes = {
     {
       path: '/profile',
       element: <Profile />,
+    },
+    {
+      path: '/ai-chat',
+      element: <AiChat />,
     },
     {
       path: '*',

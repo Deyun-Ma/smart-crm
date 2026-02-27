@@ -1,5 +1,5 @@
 {
-  "name": "idurar-erp-crm",
+  "name": "@idurar/frontend",
   "version": "4.1.0",
   "engines": {
     "node": "20.9.0",

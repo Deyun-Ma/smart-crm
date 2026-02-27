@@ -1,0 +1,10 @@
+{
+  "name": "@idurar/shared",
+  "version": "4.1.0",
+  "description": "Shared constants and utilities for IDURAR ERP CRM monorepo",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"No tests\" && exit 0"
+  },
+  "license": "Fair-code License"
+}
