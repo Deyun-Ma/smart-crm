@@ -1,0 +1,31 @@
+{
+  "name": "idurar-erp-crm-monorepo",
+  "version": "4.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10.2.4"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "setup": "npm run setup --workspace=backend",
+    "lint": "npm run lint --workspace=frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "author": "IDURAR",
+  "license": "Fair-code License",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idurar/idurar-erp-crm/.git"
+  }
+}
